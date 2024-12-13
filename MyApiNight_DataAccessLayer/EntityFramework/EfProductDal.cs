@@ -9,5 +9,12 @@ public class EfProductDal : GenericRepository<Product>, IProductDal
 	public EfProductDal(ApiContext context) : base(context)
 	{
 	}
+
+	public int GetProductCount()
+	{
+		var context = new ApiContext();
+		int value = context.Products.Count();
+		return value;
+	}
 }
 
